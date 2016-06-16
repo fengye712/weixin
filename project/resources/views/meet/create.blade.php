@@ -47,7 +47,7 @@
 		 <li><a href="#">第三会议</a></li>
 		  <li><a href="#">Separated link</a></li>
 		 </ul>
-		<!--     <button type="submit" class="btn btn-primary">保存草稿</button> -->
+		  <button type="submit" class="btn btn-primary">保存草稿</button> 
 		    <input type="submit" class="btn btn-success" value="立即提交"/>
 		
 		
