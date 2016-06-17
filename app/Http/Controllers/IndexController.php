@@ -10,6 +10,13 @@ class IndexController extends Controller
 {
     //
        public function index(){
+       	// $a= $this->getSslPage("https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx974ebfe401505c5d&corpsecret=5suJ0avXFn-jrNsYPXZ7fUFGGsmK1oDe5iZw-JcR_p0bxLKbjQGz3LF6uxI2NIBE");
+          
+        //    $a=json_decode($a,true);
+          
+       	// $url="https://qyapi.weixin.qq.com/cgi-bin/user/list?access_token=".$a['access_token']."&department_id=1&fetch_child=1&status=0";
+        //     $data=$this->getSslPage($url);
+        //     dd($data);
               return view('index');
         }
 		/*
@@ -46,18 +53,33 @@ class IndexController extends Controller
 			echo 333;
 		}
 		*/
+		function getSslPage($url) {
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_REFERER, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		$result = curl_exec($ch);
+		curl_close($ch);
+		return $result;
+		}
+
+
+
 		//新建会议
 		public function createMeeting(){
 		if ($_POST) {
 			echo '提交';
 		}else{
-			$code=$_GET['code'];
-			$token=$this->token();
-			$url="https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=$token&code=$code";
-			$data=$this-> https_request($url);
-			$da=json_decode($data,true);
-			$user_id=$da['UserId'];
-			Session::put('user_id',$user_id);
+			//$code=$_GET['code'];
+			// $token=$this->token();
+			// $url="https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=$token&code=$code";
+			// $data=$this-> https_request($url);
+			// $da=json_decode($data,true);
+			// $user_id=$da['UserId'];
+			// Session::put('user_id',$user_id);
 			//$u=Session::get('user_id');
 
 			return view('meet.create');
