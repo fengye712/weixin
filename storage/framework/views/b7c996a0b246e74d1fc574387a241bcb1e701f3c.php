@@ -213,9 +213,9 @@
             </div>
         </div>
       <div class="button_sp_area">
-     
-        <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default">保草稿存</a>
-        <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary">立即提交</a>
+     <button class="weui_btn weui_btn_mini weui_btn_primary">保草稿存</button>
+        <!-- <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default"></a> -->
+        <button class="weui_btn weui_btn_mini weui_btn_primary">立即提交</button>
     </div>
 </div>
 

@@ -37,6 +37,15 @@ Route::get('admin/left', 'admin\IndexController@left');
 Route::get('admin/login_out', 'admin\LoginController@login_out');
 
 
+
+//调查问卷
+
+Route::any('/subIndex',"SubveryController@index");
+//发送消息
+Route::any('/subShow',"SubveryController@subShow");
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

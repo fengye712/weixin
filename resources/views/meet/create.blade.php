@@ -188,7 +188,7 @@
                 <input class="weui_input" type="datetime-local" value="" placeholder=""/>
             </div>
         </div> 
-<div class="weui_cell weui_cell_select weui_select_after">
+ <div class="weui_cell weui_cell_select weui_select_after">
             <div class="weui_cell_hd">
                 <label for="" class="weui_label">会议地点</label>
             </div>
@@ -213,9 +213,9 @@
             </div>
         </div>
       <div class="button_sp_area">
-     
-        <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default">保草稿存</a>
-        <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary">立即提交</a>
+     <button class="weui_btn weui_btn_mini weui_btn_primary">保草稿存</button>
+        <!-- <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default"></a> -->
+        <button class="weui_btn weui_btn_mini weui_btn_primary">立即提交</button>
     </div>
 </div>
 
