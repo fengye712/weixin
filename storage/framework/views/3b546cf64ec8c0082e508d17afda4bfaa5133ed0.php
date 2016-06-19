@@ -5,8 +5,8 @@
 	<title>调查问卷</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 
-    <link rel="stylesheet" href="<?php echo e(url('style/weui.css')); ?>"/>
-    <link rel="stylesheet" href="<?php echo e(url('example/example.css')); ?>"/>
+    <link rel="stylesheet" href="<?php echo e(url('/style/weui.css')); ?>"/>
+    <link rel="stylesheet" href="<?php echo e(url('/example/example.css')); ?>"/>
     <script src="<?php echo e(url('js/jquery-1.11.0.min.js')); ?>"></script>
     <script src="<?php echo e(url('js/zepto.min.js')); ?>"></script>
     <script src="<?php echo e(url('js/router.min.js')); ?>"></script>
@@ -16,7 +16,7 @@
 	<div class="bd">
  
     <center>调查问卷</center>
-<form action="<?php echo e(url('subIndex')); ?>" method="post">
+<form action="<?php echo e(url('subIndex')); ?>" method="post" id='sub_add'>
     <div class="weui_cells weui_cells_form">
         <div class="weui_cell">
            
@@ -79,7 +79,7 @@
       <div class="button_sp_area">
         <button class="weui_btn weui_btn_mini weui_btn_default" id="savebox">保存草稿</button>
         <!-- <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default"></a> -->
-        <button class="weui_btn weui_btn_mini weui_btn_primary" id="sub" >立即提交</button>
+        <input type='button' class="weui_btn weui_btn_mini weui_btn_primary" id="sub" value="立即提交">
 <!--         <input type="button" name="submit" id="submit" value="注册">
 <input type="button" name="quit" id="quit" value="退出"> -->
     </div>
@@ -103,24 +103,51 @@
 </body>
 
 <script>
-    var flag=true;
-    $("#sub").click(function(){
-        var title=$("#showDialog2").val();
-        if (title=='') {
-          flag=false;
-          sAlert('请填写标题！');
+    var flag1=true;
+
+      $("#showDialog2").blur(function(){
+            var title=$("#showDialog2").val();
+            if (title=='') {
+            flag1=false;
+            sAlert('请填写标题！');
         }
-    });
-        $("#content").click(function(){
-        var c=$("#content").val();
+      });
+       var flag2=true;
+        $("#content").blur(function(){
+            var c=$("#content").val();
         if (c=='') {
-          flag=false;
-          sAlert('请填写内容！');
+          flag2=false;
+          sAlert('请填写内容!');
         }
-    });
-    if (flag==true) {
-         windows.location.href="/";
-    }
+      });  
+       $("form").submit(function(){
+                   var flag1=true;
+
+      $("#showDialog2").blur(function(){
+            var title=$("#showDialog2").val();
+            if (title=='') {
+            flag1=false;
+            sAlert('请填写标题！');
+        }
+      });
+       var flag2=true;
+        $("#content").blur(function(){
+            var c=$("#content").val();
+        if (c=='') {
+          flag2=false;
+          sAlert('请填写内容!');
+        }
+      });  
+                    if (flag1=true&&flag2=true) {
+                       return true;
+                    }else{
+                      sAlert('请认真填写!');
+                      return false;
+                    }
+        });     
+
+  
+  
 </script>
 <script type="text/javascript" language="javascript">
 

@@ -14,7 +14,7 @@ class SubveryController extends Controller
 	public function index(){
 		if ($_POST) {
 			//接收数据
-			echo 12;
+			dd($_POST);
 		}else{
 			return view('subvery.index');
 		}
