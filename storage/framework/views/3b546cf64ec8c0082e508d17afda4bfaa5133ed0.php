@@ -16,7 +16,7 @@
 	<div class="bd">
  
     <center>调查问卷</center>
-<!-- <form action="<?php echo e(url('subIndex')); ?>" method="post"> -->
+<form action="<?php echo e(url('subIndex')); ?>" method="post">
     <div class="weui_cells weui_cells_form">
         <div class="weui_cell">
            
@@ -80,10 +80,12 @@
         <button class="weui_btn weui_btn_mini weui_btn_default" id="savebox">保存草稿</button>
         <!-- <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default"></a> -->
         <button class="weui_btn weui_btn_mini weui_btn_primary" id="sub" >立即提交</button>
+<!--         <input type="button" name="submit" id="submit" value="注册">
+<input type="button" name="quit" id="quit" value="退出"> -->
     </div>
 
 </div>
-
+</form>
 <!-- 弹框信息 -->
 <!--BEGIN dialog2-->
 <div class="weui_dialog_alert" id="dialog2" style="display: none;">
@@ -93,7 +95,6 @@
         <div class="weui_dialog_bd">弹窗内容，告知当前页面信息等</div>
         <div class="weui_dialog_ft">
             <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
-
         </div>
     </div>
 </div>
@@ -107,16 +108,22 @@
         var title=$("#showDialog2").val();
         if (title=='') {
           flag=false;
-          sAlert('请填写');
+          sAlert('请填写标题！');
         }
     });
+        $("#content").click(function(){
+        var c=$("#content").val();
+        if (c=='') {
+          flag=false;
+          sAlert('请填写内容！');
+        }
+    });
+    if (flag==true) {
+         windows.location.href="/";
+    }
 </script>
 <script type="text/javascript" language="javascript">
-//Author:Daviv
-//Blog:http://blog.163.com/jxdawei
-//Date:2006-10-27
-//Email:jxdawei@gmail.com
-//Demo:http://www.veryhuo.com/a/view/38279.html
+
 function sAlert(str){
 var msgw,msgh,bordercolor;
 msgw=300;//提示窗口的宽度

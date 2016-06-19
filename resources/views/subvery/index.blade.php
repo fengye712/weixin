@@ -5,18 +5,18 @@
 	<title>调查问卷</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 
-    <link rel="stylesheet" href="{{ url('style/weui.css') }}"/>
-    <link rel="stylesheet" href="{{ url('example/example.css') }}"/>
-    <script src="{{ url('js/jquery-1.11.0.min.js') }}"></script>
-    <script src="{{ url('js/zepto.min.js') }}"></script>
-    <script src="{{ url('js/router.min.js') }}"></script>
-    <script src="{{ url('js/example.js') }}"></script>
+    <link rel="stylesheet" href="{{ url('public/style/weui.css') }}"/>
+    <link rel="stylesheet" href="{{ url('public/example/example.css') }}"/>
+    <script src="{{ url('public/js/jquery-1.11.0.min.js') }}"></script>
+    <script src="{{ url('public/js/zepto.min.js') }}"></script>
+    <script src="{{ url('public/js/router.min.js') }}"></script>
+    <script src="{{ url('public/js/example.js') }}"></script>
 </head>
 <body>
 	<div class="bd">
  
     <center>调查问卷</center>
-<!-- <form action="{{ url('subIndex') }}" method="post"> -->
+<form action="{{ url('subIndex') }}" method="post" id='sub_add'>
     <div class="weui_cells weui_cells_form">
         <div class="weui_cell">
            
@@ -80,10 +80,12 @@
         <button class="weui_btn weui_btn_mini weui_btn_default" id="savebox">保存草稿</button>
         <!-- <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default"></a> -->
         <button class="weui_btn weui_btn_mini weui_btn_primary" id="sub" >立即提交</button>
+<!--         <input type="button" name="submit" id="submit" value="注册">
+<input type="button" name="quit" id="quit" value="退出"> -->
     </div>
 
 </div>
-
+</form>
 <!-- 弹框信息 -->
 <!--BEGIN dialog2-->
 <div class="weui_dialog_alert" id="dialog2" style="display: none;">
@@ -106,16 +108,22 @@
         var title=$("#showDialog2").val();
         if (title=='') {
           flag=false;
-          sAlert('请填写');
+          sAlert('请填写标题！');
         }
     });
+        $("#content").click(function(){
+        var c=$("#content").val();
+        if (c=='') {
+          flag=false;
+          sAlert('请填写内容！');
+        }
+    });
+    if (flag==true) {
+
+    }
 </script>
 <script type="text/javascript" language="javascript">
-//Author:Daviv
-//Blog:http://blog.163.com/jxdawei
-//Date:2006-10-27
-//Email:jxdawei@gmail.com
-//Demo:http://www.veryhuo.com/a/view/38279.html
+
 function sAlert(str){
 var msgw,msgh,bordercolor;
 msgw=300;//提示窗口的宽度
