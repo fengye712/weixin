@@ -42,7 +42,7 @@ Route::get('admin/login_out', 'admin\LoginController@login_out');
 
 Route::any('/subIndex',"SubveryController@index");
 //发送消息
-Route::any('/subShow',"SubveryController@subShow");
+Route::any('/subShow',"+@subShow");
 
 
 

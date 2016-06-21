@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use DB,Session;
+use Session,Cookie,DB,Memcache,Input,Redirect,Validator,IsValid,Request;
 class SubveryController extends Controller
 {	
 
@@ -14,8 +12,15 @@ class SubveryController extends Controller
 	public function index(){
 		if ($_POST) {
 			//接收数据
-			dd($_POST);
+			$title=Request::get('sub_title');
+			$sub_content=Request::get('sub_content');
+			
+			
+
 		}else{
+			//$code=$_GET['code'];
+
+			//Session::put('$u');
 			return view('subvery.index');
 		}
 	}

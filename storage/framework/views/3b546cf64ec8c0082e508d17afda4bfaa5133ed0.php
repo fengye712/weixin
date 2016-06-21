@@ -21,13 +21,13 @@
         <div class="weui_cell">
            
             <div class="weui_cell_bd weui_cell_primary">
-                <input class="weui_input" type="text" id="showDialog2" name='sub_title' pattern="" placeholder="请输入调查主题"/>
+                <input class="weui_input" type="text" id="showDialog2" name='sub_title'  placeholder="请输入调查主题"/>
             </div>
         </div>
             <div class="weui_cell">
            
             <div class="weui_cell_bd weui_cell_primary">
-                <input class="weui_input" type="text" id='content' pattern="" name='sub_content' placeholder="请输入调查内容"/>
+                <input class="weui_input" type="text" id='content'  name='sub_content' placeholder="请输入调查内容"/>
             </div>
         </div>
         
@@ -79,7 +79,7 @@
       <div class="button_sp_area">
         <button class="weui_btn weui_btn_mini weui_btn_default" id="savebox">保存草稿</button>
         <!-- <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default"></a> -->
-        <input type='button' class="weui_btn weui_btn_mini weui_btn_primary" id="sub" value="立即提交">
+        <button class="weui_btn weui_btn_mini weui_btn_primary" id="sub" >立即提交</button>
 <!--         <input type="button" name="submit" id="submit" value="注册">
 <input type="button" name="quit" id="quit" value="退出"> -->
     </div>
@@ -102,7 +102,13 @@
 
 </body>
 
-<script>
+<script type="text/javascript" language="javascript">
+$(function(){
+
+alert(333);
+
+
+});
     var flag1=true;
 
       $("#showDialog2").blur(function(){
@@ -121,26 +127,13 @@
         }
       });  
        $("form").submit(function(){
-                   var flag1=true;
-
-      $("#showDialog2").blur(function(){
-            var title=$("#showDialog2").val();
-            if (title=='') {
-            flag1=false;
-            sAlert('请填写标题！');
-        }
-      });
-       var flag2=true;
-        $("#content").blur(function(){
-            var c=$("#content").val();
-        if (c=='') {
-          flag2=false;
-          sAlert('请填写内容!');
-        }
-      });  
-                    if (flag1=true&&flag2=true) {
-                       return true;
-                    }else{
+                 
+                    if(flag1==true&&flag2==true) 
+                    {
+                           return true;
+                    }
+                    
+                   else{
                       sAlert('请认真填写!');
                       return false;
                     }
@@ -155,7 +148,7 @@ function sAlert(str){
 var msgw,msgh,bordercolor;
 msgw=300;//提示窗口的宽度
 msgh=200;//提示窗口的高度
-titleheight=25 //提示窗口标题高度
+titleheight=50 //提示窗口标题高度
 bordercolor="#04BE02";//提示窗口的边框颜色
 titlecolor="#99CCFF";//提示窗口的标题颜色
 var sWidth,sHeight;
@@ -187,7 +180,7 @@ msgObj.style.marginTop = -75+document.documentElement.scrollTop+"px";
 msgObj.style.width = msgw + "px";
 msgObj.style.height =msgh + "px";
 msgObj.style.textAlign = "center";
-msgObj.style.lineHeight ="25px";
+msgObj.style.lineHeight ="50px";
 msgObj.style.zIndex = "10001";
 var title=document.createElement("h4");
 title.setAttribute("id","msgTitle");
