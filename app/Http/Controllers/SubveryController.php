@@ -15,7 +15,6 @@ class SubveryController extends Controller
 			$title=Request::get('sub_title');
 			$sub_content=Request::get('sub_content');
 			
-			
 
 		}else{
 			//$code=$_GET['code'];

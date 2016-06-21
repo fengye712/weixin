@@ -4,13 +4,13 @@
 	<meta charset="UTF-8">
 	<title>调查问卷</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-
-    <link rel="stylesheet" href="style/weui.css"/>
-    <link rel="stylesheet" href="example/example.css"/>
-    <script src="{{ url('js/jquery-1.11.0.min.js') }}"></script>
-    <script src="{{ url('js/zepto.min.js') }}"></script>
-    <script src="{{ url('js/router.min.js') }}"></script>
-    <script src="{{ url('js/example.js') }}"></script>
+    <base href="/" />
+    <link rel="stylesheet" href="weixin/public/style/weui.css"/>
+    <link rel="stylesheet" href="weixin/public/example/example.css"/>
+    <script src="weixin/public/js/jquery-1.11.0.min.js"></script>
+    <script src="weixin/public/js/zepto.min.js"></script>
+    <script src="weixin/public/js/router.min.js"></script>
+    <script src="weixin/public/js/example.js"></script>
 </head>
 <body>
 	<div class="bd">
@@ -103,12 +103,7 @@
 </body>
 
 <script type="text/javascript" language="javascript">
-$(function(){
 
-alert(333);
-
-
-});
     var flag1=true;
 
       $("#showDialog2").blur(function(){
