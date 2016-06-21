@@ -5,8 +5,8 @@
 	<title>调查问卷</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 
-    <link rel="stylesheet" href="{{ url('/style/weui.css') }}"/>
-    <link rel="stylesheet" href="{{ url('/example/example.css') }}"/>
+    <link rel="stylesheet" href="style/weui.css"/>
+    <link rel="stylesheet" href="example/example.css"/>
     <script src="{{ url('js/jquery-1.11.0.min.js') }}"></script>
     <script src="{{ url('js/zepto.min.js') }}"></script>
     <script src="{{ url('js/router.min.js') }}"></script>

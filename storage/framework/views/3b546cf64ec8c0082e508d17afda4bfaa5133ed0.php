@@ -5,8 +5,8 @@
 	<title>调查问卷</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 
-    <link rel="stylesheet" href="<?php echo e(url('/style/weui.css')); ?>"/>
-    <link rel="stylesheet" href="<?php echo e(url('/example/example.css')); ?>"/>
+    <link rel="stylesheet" href="style/weui.css"/>
+    <link rel="stylesheet" href="example/example.css"/>
     <script src="<?php echo e(url('js/jquery-1.11.0.min.js')); ?>"></script>
     <script src="<?php echo e(url('js/zepto.min.js')); ?>"></script>
     <script src="<?php echo e(url('js/router.min.js')); ?>"></script>
