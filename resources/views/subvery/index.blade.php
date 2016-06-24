@@ -17,7 +17,7 @@
 <body>
 	<div class="bd">
  
-    <center>调查问卷</center>
+   
 <form action="{{ url('subIndex') }}" method="post" id='id ="myform"' autocomplete="on">
     <div class="weui_cells weui_cells_form">
         <div class="weui_cell">
