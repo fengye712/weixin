@@ -23,29 +23,29 @@ class SubveryController extends Controller
 			$s->s_endtime=Request::get('m_endtime');
 			
                                $sub_item=Request::get('m_item');
-                              
+                              dd($s);
                             
-			if ($s->save()) {
-				$sid=$s->Id;
-				$count=count($sub_item);
-				for($i=0;$i<$count;$i++)
-				{
-				$sql="insert into subitem(s_item,sid) value('$sub_item[$i]',$sid)";
-				$res=DB::insert($sql);
+			// if ($s->save()) {
+			// 	$sid=$s->Id;
+			// 	$count=count($sub_item);
+			// 	for($i=0;$i<$count;$i++)
+			// 	{
+			// 	$sql="insert into subitem(s_item,sid) value('$sub_item[$i]',$sid)";
+			// 	$res=DB::insert($sql);
 				
-				}
+			// 	}
 				
-				if ($res) {
-                                                    echo "<script>alert('添加成功')</script>";
-				}else{
-					echo "<script>alert('添加失败')</script>";
-					echo Redirect::action("SubveryController@index");	
-				}
+			// 	if ($res) {
+   //                                                  echo "<script>alert('添加成功')</script>";
+			// 	}else{
+			// 		echo "<script>alert('添加失败')</script>";
+			// 		echo Redirect::action("SubveryController@index");	
+			// 	}
 
-			}else{
-				echo "<script>alert('添加失败')</script>";
-				echo Redirect::action("SubveryController@index");
-			}
+			// }else{
+			// 	echo "<script>alert('添加失败')</script>";
+			// 	echo Redirect::action("SubveryController@index");
+			// }
 			
 
 		}else{
