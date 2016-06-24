@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Http\Basic;
 use Session,Cookie,DB,Memcache,Input,Redirect,Validator,IsValid,Request;
+
 class SubveryController extends Controller
 {	
 
@@ -14,12 +15,16 @@ class SubveryController extends Controller
 			//接收数据
 			$title=Request::get('sub_title');
 			$sub_content=Request::get('sub_content');
+			dd($_POST);
 			
 
 		}else{
 			//$code=$_GET['code'];
 
 			//Session::put('$u');
+			$n=new BasicController();
+			$na=$n->token();
+			//dd($na);
 			return view('subvery.index');
 		}
 	}

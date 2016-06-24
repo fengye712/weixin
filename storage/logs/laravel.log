@@ -3144,3 +3144,30 @@ Stack trace:
 [2016-06-21 10:42:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use Request as Request because the name is already in use' in D:\phpStudy\WWW\weixin\app\Http\Controllers\SubveryController.php:6
 Stack trace:
 #0 {main}  
+[2016-06-21 12:01:27] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\BasicController' not found' in D:\phpStudy\WWW\weixin\app\Http\Controllers\SubveryController.php:24
+Stack trace:
+#0 {main}  
+[2016-06-21 12:01:58] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\BasicController' not found' in D:\phpStudy\WWW\weixin\app\Http\Controllers\SubveryController.php:24
+Stack trace:
+#0 {main}  
+[2016-06-21 12:01:59] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\BasicController' not found' in D:\phpStudy\WWW\weixin\app\Http\Controllers\SubveryController.php:24
+Stack trace:
+#0 {main}  
+[2016-06-21 12:02:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\BasicController' not found' in D:\phpStudy\WWW\weixin\app\Http\Controllers\SubveryController.php:24
+Stack trace:
+#0 {main}  
+[2016-06-21 12:02:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\BasicController' not found' in D:\phpStudy\WWW\weixin\app\Http\Controllers\SubveryController.php:24
+Stack trace:
+#0 {main}  
+[2016-06-21 12:02:01] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\BasicController' not found' in D:\phpStudy\WWW\weixin\app\Http\Controllers\SubveryController.php:24
+Stack trace:
+#0 {main}  
+[2016-06-21 12:05:12] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\Basic' not found' in D:\phpStudy\WWW\weixin\app\Http\Controllers\SubveryController.php:24
+Stack trace:
+#0 {main}  
+[2016-06-21 12:05:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\Basic' not found' in D:\phpStudy\WWW\weixin\app\Http\Controllers\SubveryController.php:24
+Stack trace:
+#0 {main}  
+[2016-06-21 12:09:56] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Maximum execution time of 30 seconds exceeded' in D:\phpStudy\WWW\weixin\app\Http\Controllers\BasicController.php:20
+Stack trace:
+#0 {main}  

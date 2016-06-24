@@ -39,5 +39,7 @@ class BasicController extends Controller{
 			return $access_token = $jsoninfo["access_token"];
 		}
 
-	
+		public function test(){
+			echo 123;
+		}
 }

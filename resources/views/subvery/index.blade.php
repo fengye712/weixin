@@ -5,9 +5,11 @@
 	<title>调查问卷</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <base href="/" />
+      <script src="weixin/public/js/jquery-1.11.0.min.js"></script>
+
     <link rel="stylesheet" href="weixin/public/style/weui.css"/>
     <link rel="stylesheet" href="weixin/public/example/example.css"/>
-    <script src="weixin/public/js/jquery-1.11.0.min.js"></script>
+  
     <script src="weixin/public/js/zepto.min.js"></script>
     <script src="weixin/public/js/router.min.js"></script>
     <script src="weixin/public/js/example.js"></script>
@@ -16,18 +18,18 @@
 	<div class="bd">
  
     <center>调查问卷</center>
-<form action="{{ url('subIndex') }}" method="post" id='sub_add'>
+<form action="{{ url('subIndex') }}" method="post" id='id ="myform"' autocomplete="on">
     <div class="weui_cells weui_cells_form">
         <div class="weui_cell">
            
             <div class="weui_cell_bd weui_cell_primary">
-                <input class="weui_input" type="text" id="showDialog2" name='sub_title'  placeholder="请输入调查主题"/>
+                <input class="weui_input" type="text" id="showDialog2" name='sub_title'  placeholder="请输入调查主题" required="required" />
             </div>
         </div>
             <div class="weui_cell">
            
             <div class="weui_cell_bd weui_cell_primary">
-                <input class="weui_input" type="text" id='content'  name='sub_content' placeholder="请输入调查内容"/>
+                <input class="weui_input" type="text" id='content'  name='sub_content' placeholder="请输入调查内容" required="required" />
             </div>
         </div>
         
@@ -57,17 +59,39 @@
                 </select>
             </div>
         </div>
+<div class="weui_cells_title">单选列表项</div>
+    <div class="weui_cells weui_cells_radio">
+        <label class="weui_cell weui_check_label" for="x11">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>单选</p>
+            </div>
+            <div class="weui_cell_ft">
+                <input type="radio" class="weui_check" name="radio1" id="x11" value="1" checked="checked">
+                <span class="weui_icon_checked"></span>
+            </div>
+        </label>
+        <label class="weui_cell weui_check_label" for="x12">
+
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>复选</p>
+            </div>
+            <div class="weui_cell_ft">
+                <input type="radio" name="radio1" class="weui_check" id="x12" value="2">
+                <span class="weui_icon_checked"></span>
+            </div>
+        </label>
+    </div>
+
+        
  <div class="weui_cell weui_cell_select weui_select_after">
             <div class="weui_cell_hd">
-                <label for="" class="weui_label">+添加新题目</label>
+                <label for="" class="weui_label" id="diao_add">+添加新题目</label>
             </div>
-            <!-- <div class="weui_cell_bd weui_cell_primary">
-                <select class="weui_select" name="m_add">
-                    <option value="1">本部门</option>
-                    <option value="2">特定部门</option>
-                    <option value="3">特定人员</option>
-                </select>
-            </div> -->
+
+    <div id="Inputsub">  
+     <div>投票项1<input type="text" class="weui_input" name="mytext[]" id="field_1" value="" required="required" /><a href="#" class="removeclass">[-]</a></div>  
+    </div>
+          
         </div>
         <div class="weui_cell">
             <div class="weui_cell_hd"><label for="" class="weui_label">截止时间</label></div>
@@ -86,55 +110,47 @@
 
 </div>
 </form>
-<!-- 弹框信息 -->
-<!--BEGIN dialog2-->
-<div class="weui_dialog_alert" id="dialog2" style="display: none;">
-    <div class="weui_mask"></div>
-    <div class="weui_dialog">
-        <div class="weui_dialog_hd"><strong class="weui_dialog_title">弹窗标题</strong></div>
-        <div class="weui_dialog_bd">弹窗内容，告知当前页面信息等</div>
-        <div class="weui_dialog_ft">
-            <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
-        </div>
-    </div>
-</div>
-<!--END dialog2-->
+
 
 </body>
 
 <script type="text/javascript" language="javascript">
 
-    var flag1=true;
+//添加输入框
 
-      $("#showDialog2").blur(function(){
-            var title=$("#showDialog2").val();
-            if (title=='') {
-            flag1=false;
-            sAlert('请填写标题！');
-        }
-      });
-       var flag2=true;
-        $("#content").blur(function(){
-            var c=$("#content").val();
-        if (c=='') {
-          flag2=false;
-          sAlert('请填写内容!');
-        }
-      });  
-       $("form").submit(function(){
-                 
-                    if(flag1==true&&flag2==true) 
-                    {
-                           return true;
-                    }
-                    
-                   else{
-                      sAlert('请认真填写!');
-                      return false;
-                    }
-        });     
+window.onload=function(){
 
+  var maxinput      = 7; //投票项的最大个数
+        var Inputsub   = $("#Inputsub"); //得到将要添加的标签
+
+        var diao_add  = $("#diao_add"); //Add button ID  
   
+        var x = Inputsub.length; //initlal text box count  
+        var FieldCount=1; //to keep track of text box added  
+
+         $("#diao_add").click(function(e){
+      
+  
+                        if(x <= maxinput) //max input box allowed  
+                        {  
+                            FieldCount++; //text box added increment  
+                            //add input box  
+                            $(Inputsub).append('<tr><div><td></td><td>投票项'+ FieldCount +'<input type="text"  class="weui_input" name="mytext[]" id="field_'+ FieldCount +'" value="" required="required" /><a href="javascript:void(0);" class="removeclass">[-]</a></td></div></tr>');  
+                            x++; //text box increment  
+                        }  
+                        return false;  
+    });
+
+    $("body").on("click",".removeclass", function(e){ //user click on remove text  
+        if( x > 1 ) {  
+                $(this).parent('td').remove(); //remove text box  
+                x--; //decrement textbox  
+        }  
+     return false;  
+})        
+
+}
+     
   
 </script>
 <script type="text/javascript" language="javascript">
