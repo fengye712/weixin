@@ -23,6 +23,7 @@ class SubveryController extends Controller
 			$s->s_endtime=Request::get('m_endtime');
 			
                                $sub_item=Request::get('m_item');
+                               print_r($_POST);
                               dd($s);
                             
 			// if ($s->save()) {
