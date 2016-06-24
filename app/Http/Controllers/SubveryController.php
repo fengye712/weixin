@@ -43,9 +43,9 @@ class SubveryController extends Controller
 			// 		echo "<script>alert('添加失败')</script>";
 			// 		echo Redirect::action("SubveryController@index");	
 			// 	}
-
+			 	echo 2323;die;
 			 }else{
-			 	echo "<script>alert('添加失败')</script>";
+			 	echo "<script>alert('添加失败')</script>";die;
 			// 	echo Redirect::action("SubveryController@index");
 			 }
 			
