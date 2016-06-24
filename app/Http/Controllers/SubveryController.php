@@ -26,7 +26,8 @@ class SubveryController extends Controller
                                $sub_item=Request::get('m_item');
                              //  print_r($_POST);
                               // dd($s);
-                               $res=Subvery::addSub($s);
+                              $res=DB::table('subvery')->insertGetId( $s );
+                              //  $res=Subvery::addSub($s);
 			 if ($res) {
 			// 	$sid=$s->Id;
 			// 	$count=count($sub_item);
