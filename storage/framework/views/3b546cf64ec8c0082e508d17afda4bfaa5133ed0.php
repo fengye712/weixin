@@ -52,7 +52,7 @@
                 <label for="" class="weui_label">调查对象</label>
             </div>
             <div class="weui_cell_bd weui_cell_primary">
-                <select class="weui_select" name="m_add">
+                <select class="weui_select" name="m_object">
                     <option value="1">本部门</option>
                     <option value="2">特定部门</option>
                     <option value="3">特定人员</option>
@@ -66,7 +66,7 @@
                 <p>单选</p>
             </div>
             <div class="weui_cell_ft">
-                <input type="radio" class="weui_check" name="radio1" id="x11" value="1" checked="checked">
+                <input type="radio" class="weui_check" name="m_type" id="x11" value="1" checked="checked">
                 <span class="weui_icon_checked"></span>
             </div>
         </label>
@@ -76,7 +76,7 @@
                 <p>复选</p>
             </div>
             <div class="weui_cell_ft">
-                <input type="radio" name="radio1" class="weui_check" id="x12" value="2">
+                <input type="radio" name="m_type" class="weui_check" id="x12" value="2">
                 <span class="weui_icon_checked"></span>
             </div>
         </label>
@@ -89,14 +89,14 @@
             </div>
 
     <div id="Inputsub">  
-     <div>投票项1<input type="text" class="weui_input" name="mytext[]" id="field_1" value="" required="required" /><a href="#" class="removeclass">[-]</a></div>  
+     <div>投票项1<input type="text" class="weui_input" name="m_item[]" id="field_1" value="" required="required" /><a href="#" class="removeclass">[-]</a></div>  
     </div>
           
         </div>
         <div class="weui_cell">
             <div class="weui_cell_hd"><label for="" class="weui_label">截止时间</label></div>
             <div class="weui_cell_bd weui_cell_primary">
-                <input class="weui_input" type="datetime-local" value="" placeholder=""/>
+                <input class="weui_input" name="m_endtime" type="datetime-local" value="" placeholder=""/>
             </div>
         </div> 
        
@@ -115,21 +115,7 @@
 </body>
 
 <script type="text/javascript" language="javascript">
-// $(document).ready( function() {
 
-// $("#myform").submit(function(){ 
-//      var title=$("#showDialog2").val();
-//      var c=$("#content").val();
-//         if (title=='' || c=='') {
-         
-//             sAlert('请认真填写!');
-//             return false;
-//         }
-
-
-// });
-
-// });
 //添加输入框
 
 window.onload=function(){
@@ -149,7 +135,7 @@ window.onload=function(){
                         {  
                             FieldCount++; //text box added increment  
                             //add input box  
-                            $(Inputsub).append('<tr><div><td></td><td>投票项'+ FieldCount +'<input type="text"  class="weui_input" name="mytext[]" id="field_'+ FieldCount +'" value="" required="required" /><a href="javascript:void(0);" class="removeclass">[-]</a></td></div></tr>');  
+                            $(Inputsub).append('<tr><div><td></td><td>投票项'+ FieldCount +'<input type="text"  class="weui_input" name="m_item[]" id="field_'+ FieldCount +'" value="" required="required" /><a href="javascript:void(0);" class="removeclass">[-]</a></td></div></tr>');  
                             x++; //text box increment  
                         }  
                         return false;  
@@ -160,30 +146,11 @@ window.onload=function(){
                 $(this).parent('td').remove(); //remove text box  
                 x--; //decrement textbox  
         }  
-     return false;  
+       return false;  
 })        
 
 }
-   
-
-
-      // $("#showDialog2").blur(function(){
-      //       var title=$("#showDialog2").val();
-      //       if (title=='') {
-          
-      //       sAlert('请填写标题！');
-      //   }
-      // });
-    
-      //   $("#content").blur(function(){
-      //       var c=$("#content").val();
-      //   if (c=='') {
-         
-      //     sAlert('请填写内容!');
-      //   }
-      // });  
-      
-  
+     
   
 </script>
 <script type="text/javascript" language="javascript">
