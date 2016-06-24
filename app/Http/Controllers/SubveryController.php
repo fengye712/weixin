@@ -13,18 +13,18 @@ class SubveryController extends Controller
 	//新建调查表
 	public function index(){
 		if ($_POST) {
-			$s=new Subvery;
-			//接收数据
-			$s->s_title=Request::get('sub_title');
-			$s->s_desc=Request::get('sub_content');
-			$s->s_object=Request::get('"m_object');
-			$s->s_type=Request::get('m_type');
+			// $s=new Subvery;
+			// //接收数据
+			// $s->s_title=Request::get('sub_title');
+			// $s->s_desc=Request::get('sub_content');
+			// $s->s_object=Request::get('"m_object');
+			// $s->s_type=Request::get('m_type');
 			
-			$s->s_endtime=Request::get('m_endtime');
+			// $s->s_endtime=Request::get('m_endtime');
 			
-                               $sub_item=Request::get('m_item');
+   //                             $sub_item=Request::get('m_item');
                                print_r($_POST);
-                              dd($s);
+                           //   dd($s);
                             
 			// if ($s->save()) {
 			// 	$sid=$s->Id;
