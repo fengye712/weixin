@@ -25,9 +25,9 @@ class SubveryController extends Controller
 			
                                $sub_item=Request::get('m_item');
                              //  print_r($_POST);
-                               dd($s);
-                            
-			// if ($s->save()) {
+                              // dd($s);
+                               $res=Subvery::addSub($s);
+			 if ($res) {
 			// 	$sid=$s->Id;
 			// 	$count=count($sub_item);
 			// 	for($i=0;$i<$count;$i++)
@@ -44,10 +44,10 @@ class SubveryController extends Controller
 			// 		echo Redirect::action("SubveryController@index");	
 			// 	}
 
-			// }else{
-			// 	echo "<script>alert('添加失败')</script>";
+			 }else{
+			 	echo "<script>alert('添加失败')</script>";
 			// 	echo Redirect::action("SubveryController@index");
-			// }
+			 }
 			
 
 		}else{
