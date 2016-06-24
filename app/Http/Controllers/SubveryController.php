@@ -23,6 +23,7 @@ class SubveryController extends Controller
 			$s->s_endtime=Request::get('m_endtime');
 			
                                $sub_item=Request::get('m_item');
+                               echo 233;
                                dd($_POST);
 			if ($s->save()) {
 				$sid=$s->Id;
