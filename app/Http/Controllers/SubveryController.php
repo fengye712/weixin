@@ -15,7 +15,7 @@ class SubveryController extends Controller
 		if ($_POST) {
 			//$s=new Subvery;
 			// //接收数据
-
+			ini_set("display_errors","On");
 			$s['s_title']=Request::get('sub_title');
 			$s['s_desc']=Request::get('sub_content');
 			$s['s_object']=Request::get('"m_object');
