@@ -52,13 +52,22 @@ class SubveryController extends Controller
 			
 
 		}else{
-			//$code=$_GET['code'];
 
-			//Session::put('$u');
+			//$code=$_GET['code'];
+			
+			if (Session::get('access_token')) {
+				$token=Session::get('access_token');
+				return view('subvery.index');
+			}else{
+
 			$n=new BasicController();
 			$na=$n->token();
-			dd($na);
-			return view('subvery.index');
+			Session::put('access_token',$na);
+
+			         return view('subvery.index');
+			}
+			
+			
 		}
 	}
 }
