@@ -29,25 +29,25 @@ class SubveryController extends Controller
                               $res=DB::table('subvery')->insertGetId( $s );
                               //  $res=Subvery::addSub($s);
 			 if ($res) {
-			// 	$sid=$s->Id;
-			// 	$count=count($sub_item);
-			// 	for($i=0;$i<$count;$i++)
-			// 	{
-			// 	$sql="insert into subitem(s_item,sid) value('$sub_item[$i]',$sid)";
-			// 	$res=DB::insert($sql);
+				$sid=$s->Id;
+				$count=count($sub_item);
+				for($i=0;$i<$count;$i++)
+				{
+				$sql="insert into subitem(s_item,sid) value('$sub_item[$i]',$sid)";
+				$res=DB::insert($sql);
 				
-			// 	}
+				}
 				
-			// 	if ($res) {
-   //                                                  echo "<script>alert('添加成功')</script>";
-			// 	}else{
-			// 		echo "<script>alert('添加失败')</script>";
-			// 		echo Redirect::action("SubveryController@index");	
-			// 	}
-			 	echo 2323;die;
+				if ($res) {
+                                                    echo "<script>alert('添加成功')</script>";
+				}else{
+					echo "<script>alert('添加失败')</script>";
+					echo Redirect::action("SubveryController@index");	
+				}
+			 	//echo 2323;die;
 			 }else{
-			 	echo "<script>alert('添加失败')</script>";die;
-			// 	echo Redirect::action("SubveryController@index");
+			 	echo "<script>alert('添加失败')</script>";
+				echo Redirect::action("SubveryController@index");
 			 }
 			
 
