@@ -57,7 +57,7 @@ class SubveryController extends Controller
 			//Session::put('$u');
 			$n=new BasicController();
 			$na=$n->token();
-			//dd($na);
+			dd($na);
 			return view('subvery.index');
 		}
 	}
